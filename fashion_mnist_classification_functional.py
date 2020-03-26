@@ -10,7 +10,6 @@ def get_model(input_shape, num_classes):
     model_input = Input(shape=input_shape)
 
     x = Conv2D(32, kernel_size=(3, 3))(model_input)
-
     x = BatchNormalization()(x)
     x = Activation('relu')(x)
     x = MaxPooling2D(pool_size=(2, 2))(x)
@@ -41,7 +40,7 @@ def get_model(input_shape, num_classes):
 
 
 def main():
-    mndata = MNIST('data', return_type="numpy")
+    mndata = MNIST('data/mnist-fashion', return_type="numpy")
 
     X_train, y_train = mndata.load_training()
     X_test, y_test = mndata.load_testing()
