@@ -7,7 +7,7 @@ from keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, BatchNormalizatio
 
 
 def get_model(input_shape, num_classes):
-    model_input = Input(shape=(28,28,1))
+    model_input = Input(shape=input_shape)
 
     x = Conv2D(32, kernel_size=(3, 3))(model_input)
 
@@ -59,6 +59,7 @@ def main():
     mean = np.mean(X_train)
     std = np.std(X_train)
 
+    # normalize data
     X_train = (X_train - mean) / std
     X_test = (X_test - mean) / std
 
@@ -69,12 +70,11 @@ def main():
     model = get_model(input_shape, num_classes)
 
     model.fit(X_train, y_train,
-                        epochs=2,
-                        batch_size=32,
-                        verbose=1)
+              epochs=2,
+              batch_size=32,
+              verbose=1)
 
     score = model.evaluate(X_test, y_test, batch_size=128)
-
 
     print('Test loss:', score[0])
     print('Test accuracy:', score[1])
