@@ -24,9 +24,6 @@ batch_size = 32
 # train_path = 'data/blood_cell_images/TRAIN'
 # valid_path = 'data/blood_cell_images/TEST'
 
-# https://www.kaggle.com/moltean/fruits
-# train_path = 'data/fruits-360/Training'
-# valid_path = 'data/fruits-360/Validation'
 train_path = 'data/fruits-360-small/Training'
 val_path = 'data/fruits-360-small/Test'
 
