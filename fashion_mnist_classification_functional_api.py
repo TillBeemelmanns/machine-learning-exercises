@@ -3,7 +3,8 @@ import numpy as np
 from mnist import MNIST
 
 from keras import Model
-from keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, BatchNormalization, Activation, Input
+from keras.layers import Dense, Conv2D, MaxPooling2D, \
+    Flatten, BatchNormalization, Activation, Input
 
 
 def get_model(input_shape, num_classes):
@@ -68,7 +69,8 @@ def main():
 
     model = get_model(input_shape, num_classes)
 
-    model.fit(X_train, y_train,
+    model.fit(X_train,
+              y_train,
               epochs=2,
               batch_size=32,
               verbose=1)

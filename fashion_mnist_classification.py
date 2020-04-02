@@ -3,7 +3,8 @@ import numpy as np
 from mnist import MNIST
 
 from keras.models import Sequential
-from keras.layers import Dense, Conv2D, MaxPooling2D, Dropout, Flatten, BatchNormalization, Activation
+from keras.layers import Dense, Conv2D, MaxPooling2D,\
+    Flatten, BatchNormalization, Activation
 
 
 def get_model(input_shape, num_classes):
@@ -66,13 +67,15 @@ def main():
 
     model = get_model(input_shape, num_classes)
 
-    model.fit(X_train, y_train,
-                        epochs=2,
-                        batch_size=32,
-                        verbose=1)
+    model.fit(X_train,
+              y_train,
+              epochs=2,
+              batch_size=32,
+              verbose=1)
 
-    score = model.evaluate(X_test, y_test, batch_size=128)
-
+    score = model.evaluate(X_test,
+                           y_test,
+                           batch_size=128)
 
     print('Test loss:', score[0])
     print('Test accuracy:', score[1])

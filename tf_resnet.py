@@ -1,13 +1,8 @@
-import os
-import tensorflow as tf
-import numpy as np
-from tensorflow import keras
-
 from mnist import MNIST
 
-tf.random.set_seed(22)
-np.random.seed(22)
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+import tensorflow as tf
+from tensorflow import keras
+
 assert tf.__version__.startswith('2.')
 
 
@@ -118,7 +113,7 @@ def main():
 
     num_classes = 10
     batch_size = 32
-    epochs = 1
+    epochs = 5
     img_rows = 28
     img_cols = 28
 
@@ -144,7 +139,8 @@ def main():
     model.summary()
 
     # train
-    model.fit(x_train, y_train,
+    model.fit(x_train,
+              y_train,
               batch_size=batch_size,
               epochs=epochs,
               validation_data=(x_test, y_test),
