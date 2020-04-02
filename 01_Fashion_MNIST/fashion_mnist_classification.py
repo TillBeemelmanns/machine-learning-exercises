@@ -40,7 +40,7 @@ def get_model(input_shape, num_classes):
 
 
 def main():
-    mndata = MNIST('data/mnist_fasion', return_type="numpy")
+    mndata = MNIST('../data/mnist_fasion', return_type="numpy")
 
     X_train, y_train = mndata.load_training()
     X_test, y_test = mndata.load_testing()

@@ -5,7 +5,7 @@ from keras.applications.resnet_v2 import preprocess_input
 
 from keras.preprocessing.image import ImageDataGenerator
 
-from util import plot_confusion_matrix
+from utils.utils import plot_confusion_matrix
 
 from sklearn.metrics import confusion_matrix
 import numpy as np
@@ -19,11 +19,11 @@ def main():
     IMAGE_SIZE = [100, 100]
 
     # training config:
-    epochs = 10
+    epochs = 5
     batch_size = 32
 
-    train_path = 'data/fruits-360-small/Training'
-    val_path = 'data/fruits-360-small/Test'
+    train_path = '../data/fruits-360-small/Training'
+    val_path = '../data/fruits-360-small/Test'
 
     # useful for getting number of files
     image_files = glob(train_path + '/*/*.jp*g')
@@ -71,8 +71,6 @@ def main():
         vertical_flip=True,
         preprocessing_function=preprocess_input
     )
-
-    # test generator to see how it works and some other useful things
 
     # get label mapping for confusion matrix plot later
     test_gen = gen.flow_from_directory(val_path, target_size=IMAGE_SIZE)
@@ -144,7 +142,6 @@ def main():
     print(val_cm)
 
     # plot some data
-
     # loss
     plt.plot(r.history['loss'], label='train loss')
     plt.plot(r.history['val_loss'], label='val loss')

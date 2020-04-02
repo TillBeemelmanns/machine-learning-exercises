@@ -5,7 +5,7 @@ from keras.applications.vgg16 import preprocess_input
 from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
 
-from util import plot_confusion_matrix
+from utils.utils import plot_confusion_matrix
 
 from sklearn.metrics import confusion_matrix
 import numpy as np
@@ -24,8 +24,8 @@ batch_size = 32
 # train_path = 'data/blood_cell_images/TRAIN'
 # valid_path = 'data/blood_cell_images/TEST'
 
-train_path = 'data/fruits-360-small/Training'
-val_path = 'data/fruits-360-small/Test'
+train_path = '../data/fruits-360-small/Training'
+val_path = '../data/fruits-360-small/Test'
 
 # useful for getting number of files
 image_files = glob(train_path + '/*/*.jp*g')

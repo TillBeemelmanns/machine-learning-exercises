@@ -1,5 +1,6 @@
 from mnist import MNIST
 
+import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 
@@ -109,7 +110,7 @@ class ResNet(keras.Model):
 
 def main():
 
-    mndata = MNIST('data/mnist_fasion', return_type="numpy")
+    mndata = MNIST('../data/mnist_fasion', return_type="numpy")
 
     num_classes = 10
     batch_size = 32
@@ -120,8 +121,8 @@ def main():
     x_train, y_train = mndata.load_training()
     x_test, y_test = mndata.load_testing()
 
-    x_train = x_train.reshape(-1, img_rows, img_cols, 1)
-    x_test = x_test.reshape(-1, img_rows, img_cols, 1)
+    x_train = x_train.reshape(-1, img_rows, img_cols, 1).astype(np.float32)
+    x_test = x_test.reshape(-1, img_rows, img_cols, 1).astype(np.float32)
 
     print(x_train.shape, y_train.shape)
     print(x_test.shape, y_test.shape)

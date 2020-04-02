@@ -13,7 +13,7 @@ def link(src, dst):
 
 if __name__ == '__main__':
 
-    target_dir = 'data/fruits-360-small'
+    target_dir = '../data/fruits-360-small'
 
     mkdir(target_dir)
 
@@ -28,8 +28,8 @@ if __name__ == '__main__':
       'Raspberry'
     ]
 
-    train_path_from = os.path.abspath('data/fruits-360/Training')
-    test_path_from = os.path.abspath('data/fruits-360/Test')
+    train_path_from = os.path.abspath('../data/fruits-360/Training')
+    test_path_from = os.path.abspath('../data/fruits-360/Test')
 
     train_path_to = os.path.abspath(os.path.join(target_dir, 'Training'))
     test_path_to = os.path.abspath(os.path.join(target_dir, 'Test'))
