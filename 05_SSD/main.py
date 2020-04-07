@@ -1,22 +1,15 @@
-import os
-import sys
 import pathlib
 
 import numpy as np
 import os
-import six.moves.urllib as urllib
-import tarfile
 import tensorflow as tf
-import zipfile
 
-from collections import defaultdict
-from io import StringIO
 from matplotlib import pyplot as plt
 from PIL import Image
 
 from object_detection.utils import ops as utils_ops
-from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
+from .categories import category_index
 
 # patch tf1 into `utils.ops`
 utils_ops.tf = tf.compat.v1
@@ -100,15 +93,14 @@ def show_inference(model, image_path, category_index):
         use_normalized_coordinates=True,
         line_thickness=8)
 
-    plt.imshow(image_np)
+    plt.imsave(os.path.basename(image_path), image_np)
 
     return image_np
 
 
 def main():
-    # List of the strings that is used to add correct label for each box.
-    PATH_TO_LABELS = 'models/research/object_detection/data/mscoco_label_map.pbtxt'
-    category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
+    # Download tensorflow models repro
+    download_models()
 
     # If you want to test the code with your images, just add path to the images to the TEST_IMAGE_PATHS.
     PATH_TO_TEST_IMAGES_DIR = pathlib.Path('models/research/object_detection/test_images')
@@ -128,7 +120,7 @@ def main():
 
     # Object instance segmentation
     model_name = "mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28"
-    masking_model = load_model("mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28")
+    masking_model = load_model(model_name)
 
     print(masking_model.output_shapes)
 
