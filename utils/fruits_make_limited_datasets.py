@@ -1,6 +1,5 @@
 import os
 
-
 def mkdir(p):
   if not os.path.exists(p):
     os.mkdir(p)
