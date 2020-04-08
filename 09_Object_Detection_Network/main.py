@@ -229,6 +229,25 @@ if __name__ == '__main__':
     ]
     class_names = ['Charmander', 'Bulbasaur', 'Squirtle']
 
+    xx, yy = None, None
+    for x, y in pokemon_generator_multiclass():
+        xx, yy = x, y
+        break
+
+    n = yy.shape[0]
+    idx = np.random.randint(n)
+
+    fig, ax = plt.subplots(1)
+    plt.imshow(xx[idx])
+    rect = Rectangle(
+        (yy[idx][1] * IMAGE_DIM, yy[idx][0] * IMAGE_DIM),
+         yy[idx][3] * IMAGE_DIM, yy[idx][2] * IMAGE_DIM,
+        linewidth=1, edgecolor='r', facecolor='none')
+    ax.add_patch(rect)
+    plt.show()
+
+    exit()
+
     model = make_model()
     model.fit_generator(
         pokemon_generator_multiclass(),
