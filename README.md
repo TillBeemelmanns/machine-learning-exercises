@@ -1,3 +1,3 @@
-# Tensorflow 2.x Machine Learning Cookbook
+# Tensorflow 2.x Machine Learning Examples
 
 
