@@ -1,9 +1,9 @@
-from keras.layers import Dense, Flatten
-from keras.models import Model
-from keras.applications.vgg16 import VGG16
-from keras.applications.vgg16 import preprocess_input
-from keras.preprocessing import image
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.layers import Dense, Flatten
+from tensorflow.keras.models import Model
+from tensorflow.keras.applications.vgg16 import VGG16
+from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 from utils.utils import plot_confusion_matrix
 

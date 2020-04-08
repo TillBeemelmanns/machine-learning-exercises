@@ -1,9 +1,9 @@
-from keras.layers import Dense, Flatten
-from keras.models import Model
-from keras.applications.resnet_v2 import ResNet50V2
-from keras.applications.resnet_v2 import preprocess_input
+from tensorflow.keras.layers import Dense, Flatten
+from tensorflow.keras.models import Model
+from tensorflow.keras.applications.resnet_v2 import ResNet50V2
+from tensorflow.keras.applications.resnet_v2 import preprocess_input
 
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 from utils.utils import plot_confusion_matrix
 

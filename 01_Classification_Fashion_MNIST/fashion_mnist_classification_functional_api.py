@@ -2,9 +2,9 @@ import numpy as np
 
 from mnist import MNIST
 
-from keras import Model
-from keras.layers import Dense, Conv2D, MaxPooling2D, \
-    Flatten, BatchNormalization, Activation, Input
+from tensorflow.keras import Model
+from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, \
+                                    Flatten, BatchNormalization, Activation, Input
 
 
 def get_model(input_shape, num_classes):

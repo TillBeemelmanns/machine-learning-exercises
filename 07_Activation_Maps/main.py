@@ -1,6 +1,6 @@
-from keras.models import Model
-from keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
-from keras.preprocessing import image
+from tensorflow.keras.models import Model
+from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
+from tensorflow.keras.preprocessing import image
 
 import numpy as np
 import scipy as sp

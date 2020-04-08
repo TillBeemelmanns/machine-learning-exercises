@@ -1,12 +1,10 @@
 from datetime import datetime
 
-from keras.layers import Input, Lambda, Dense, Flatten
-from keras.layers import AveragePooling2D, MaxPooling2D
-from keras.layers.convolutional import Conv2D
-from keras.models import Model, Sequential
-from keras.applications.vgg16 import VGG16
-from keras.applications.vgg16 import preprocess_input
-from keras.preprocessing import image
+from tensorflow.keras.layers import Conv2D, AveragePooling2D, MaxPooling2D
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.applications.vgg16 import VGG16
+from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.preprocessing import image
 
 import keras.backend as K
 import numpy as np

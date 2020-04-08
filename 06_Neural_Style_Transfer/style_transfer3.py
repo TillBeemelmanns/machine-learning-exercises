@@ -1,8 +1,8 @@
-from keras.models import Model, Sequential
-from keras.applications.vgg16 import preprocess_input
-from keras.preprocessing import image
+from tensorflow.keras.models import Model, Sequential
+from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow.keras.preprocessing import image
 
-import keras.backend as K
+import tensorflow.keras.backend as K
 import numpy as np
 import matplotlib.pyplot as plt
 
